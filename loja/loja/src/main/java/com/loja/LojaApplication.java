@@ -9,8 +9,8 @@ import java.util.List;
 @SpringBootApplication
 public class LojaApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(LojaApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(LojaApplication.class, args);
+    }
 
 }
