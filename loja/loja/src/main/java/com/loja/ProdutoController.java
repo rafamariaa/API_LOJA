@@ -20,7 +20,7 @@ public class ProdutoController {
 
     @GetMapping("/{produtoId}")
     public Produto buscarProdutoPeloIdNaLoja(@PathVariable int produtoId){
-        Produto produtoProcurado = this.tabelaDeProdutos.busarProdutoPeloId(produtoId);
+        Produto produtoProcurado = this.tabelaDeProdutos.buscarProdutoPeloId(produtoId);
         return produtoProcurado;
     }
 
@@ -32,6 +32,11 @@ public class ProdutoController {
     @PutMapping("/{produtoId}")
     public void atualizarProdutoNaLoja(@PathVariable int produtoId, @RequestBody Produto dadosAtualizarProduto){
         this.tabelaDeProdutos.atualizarProdutos(produtoId, dadosAtualizarProduto);
+    }
+
+    @DeleteMapping("/{produtoId}")
+    public void removerProdutodaLoja(@PathVariable int produtoId){
+        this.tabelaDeProdutos.removerProduto(produtoId);
     }
 
 }

@@ -46,7 +46,7 @@ public class TabelaProdutos {
      * @param produtoId
      * @return
      */
-    public Produto busarProdutoPeloId(int produtoId) {
+    public Produto buscarProdutoPeloId(int produtoId) {
         Produto produtoProcurado = null;
         for (Produto p : this.produtos) {
             if (p.getId() == produtoId) {
@@ -83,11 +83,21 @@ public class TabelaProdutos {
      */
 
     public void atualizarProdutos(int produtosId, Produto produtoAtualizar){
-        Produto produtoProcurado = this.busarProdutoPeloId(produtosId);
+        Produto produtoProcurado = this.buscarProdutoPeloId(produtosId);
         if (produtoProcurado != null){
             produtoProcurado.setNome(produtoAtualizar.getNome());
             produtoProcurado.setDescricao(produtoAtualizar.getDescricao());
             produtoProcurado.setValorUnitario(produtoAtualizar.getValorUnitario());
         }
+    }
+
+    /**
+     * Metodo que remove o produto na lista
+     * utiliza como base proprio objeto para remover
+     * @param produtoId
+     */
+    public void removerProduto(int produtoId){
+        Produto produtoRemover = this.buscarProdutoPeloId(produtoId);
+        this.produtos.remove(produtoRemover);
     }
 }
